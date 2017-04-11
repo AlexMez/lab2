@@ -14,30 +14,16 @@ namespace LabNum2
             while (run)
             {
 
-
+                //input
 
                 Console.Write("enter a number between 1 and 100: ");
                 string input = Console.ReadLine();
+
+
+
                 int inputNum = Convert.ToInt32(input);
 
-                if ((inputNum > 100) || (inputNum < 1))
-                {
-                    Console.WriteLine("please enter a number between 1 and 100");
-
-                }
-                else if ((inputNum % 2) != 0)
-                {
-                    Console.WriteLine("Number entered {0} is {1}. ", inputNum, "odd");
-                }
-                else if ((inputNum < 26))
-                {
-                    Console.WriteLine("even and less than 25");
-                }
-
-                else
-                {
-                    Console.WriteLine("even");
-                }
+                NumberThinker(inputNum);
 
                 Console.WriteLine("type 'no' to quit");
                 string quit = Console.ReadLine();
@@ -49,5 +35,27 @@ namespace LabNum2
 
             }
         }
+            private static void NumberThinker(int Num)
+        {
+            if ((Num > 100) || (Num < 1))
+            {
+                Console.WriteLine("please enter a number between 1 and 100");
+
+            }
+            else if ((Num % 2) != 0)
+            {
+                Console.WriteLine("Number entered {0} is {1}. ", Num, "odd");
+            }
+            else if ((Num < 26))
+            {
+                Console.WriteLine("even and less than 25");
+            }
+
+            else
+            {
+                Console.WriteLine("even");
+            }
+        }
+        
     }
 }
