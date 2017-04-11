@@ -15,10 +15,20 @@ namespace LabNum2
             {
 
                 //input
+                bool inside = true;
+                string input;
 
-                Console.Write("enter a number between 1 and 100: ");
-                string input = Console.ReadLine();
+                Console.WriteLine("Enter a number between 1-100");
 
+                input = Console.ReadLine();
+
+                while (((Validate(input)) == false))
+                {
+                    Console.WriteLine("invalid input, please enter a number between 1 and 100: ");
+                    Console.ReadLine();
+
+                   
+                }
 
 
                 int inputNum = Convert.ToInt32(input);
@@ -35,7 +45,23 @@ namespace LabNum2
 
             }
         }
-            private static void NumberThinker(int Num)
+
+        private static bool Validate(string check)
+        {
+            int value;
+            if (int.TryParse(check, out value))
+            {
+                
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        private static void NumberThinker(int Num)
         {
             if ((Num > 100) || (Num < 1))
             {
